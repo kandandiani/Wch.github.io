@@ -18,16 +18,15 @@ jobs:
           fetch-depth: 0
 
       - name: 设置 pnpm
-      uses: pnpm/action-setup@v4
-      with:
-        version: 8
+        uses: pnpm/action-setup@v4
 
       - name: 设置 Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
-        cache: pnpm
-
+        uses: actions/setup-node@v4
+        with:
+          # 选择要使用的 node 版本
+          node-version: 22
+          # 缓存 pnpm 依赖
+          cache: pnpm
 
       - name: 安装依赖
         run: pnpm install --frozen-lockfile
@@ -44,7 +43,7 @@ jobs:
           # 部署到 gh-pages 分支
           target_branch: gh-pages
           # 部署目录为 VuePress 的默认输出目录
-          build_dir: kandandiani.github.io/.vuepress/dist
+          build_dir: src/.vuepress/dist
         env:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -5,8 +5,8 @@
     "target": "ES2022"
   },
   "include": [
-    "kandandiani.github.io/.vuepress/**/*.ts",
-    "kandandiani.github.io/.vuepress/**/*.vue"
+    "src/.vuepress/**/*.ts",
+    "src/.vuepress/**/*.vue"
   ],
   "exclude": [
     "node_modules"
